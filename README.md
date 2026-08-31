@@ -63,6 +63,22 @@ unnoticed: the policy reads source, not intent.
 
 ## METHODS
 
+### supported\_parameters
+
+None.
+
+### default\_severity
+
+SEVERITY\_HIGHEST
+
+### default\_themes
+
+security, performance
+
+### applies\_to
+
+PPI::Token::Word
+
 ### violates
 
 Standard [Perl::Critic::Policy](https://metacpan.org/pod/Perl%3A%3ACritic%3A%3APolicy) interface.  Returns a violation for an `open`

@@ -76,12 +76,30 @@ Readonly::Scalar my $TWO_ARG_PIPE_RX => qr/ (?: \A \s* [|] | [|] \s* \z ) /xms;
 Readonly::Scalar my $DESC => q{Pipe "open" used};
 Readonly::Scalar my $EXPL => q{Shelling out needs signing off on -- use system/exec/qx with a '## no critic' saying why};
 
+=head2 METHODS
+
+=head3 supported_parameters
+
+None.
+
+=head3 default_severity
+
+SEVERITY_HIGHEST
+
+=head3 default_themes
+
+security, performance
+
+=head3 applies_to
+
+PPI::Token::Word
+
+=cut
+
 sub supported_parameters { return () }
 sub default_severity     { return $SEVERITY_HIGHEST }
-sub default_themes       { return qw(troglodyne security) }
+sub default_themes       { return qw(security performance) }
 sub applies_to           { return 'PPI::Token::Word' }
-
-=head2 METHODS
 
 =head3 violates
 
