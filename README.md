@@ -68,11 +68,24 @@ unnoticed: the policy reads source, not intent.
 Standard [Perl::Critic::Policy](https://metacpan.org/pod/Perl%3A%3ACritic%3A%3APolicy) interface.  Returns a violation for an `open`
 whose mode says to spawn a process, and nothing for one that opens a file.
 
+# BUGS
+
+Please report any bugs or feature requests on the bugtracker website
+[https://github.com/teodesian/perl-critic-policy-prohibitpipeopen/issues](https://github.com/teodesian/perl-critic-policy-prohibitpipeopen/issues)
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
 # AUTHORS
 
 Current Maintainers:
 
 - George S. Baugh <teodesian@gmail.com>
+
+# CONTRIBUTOR
+
+George Baugh <andy@troglodyne.net>
 
 # COPYRIGHT AND LICENSE
 
