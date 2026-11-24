@@ -1,5 +1,5 @@
 use strict;
-use warnings;
+use warnings FATAL => 'all';
 
 use re '/aa';
 
@@ -8,7 +8,6 @@ use 5.014;
 use Test::More;
 
 use Perl::Critic;
-use Perl::Critic::Policy::ProhibitPipeOpen;
 
 # -profile => q{} because Perl::Critic otherwise walks up from cwd looking for
 # a .perlcriticrc, finds this dist's own, and runs every policy in it against
@@ -54,3 +53,5 @@ foreach my $case ( sort keys %allowed ) {
 is( violations(q{open( my $fh, '-|', 'ls' );  ## no critic (ProhibitPipeOpen)}), 0, "an explicit no-critic is what signs it off" );
 
 done_testing();
+
+1;
