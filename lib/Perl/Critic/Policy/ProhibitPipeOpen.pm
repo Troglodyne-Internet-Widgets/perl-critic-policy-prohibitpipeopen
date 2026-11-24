@@ -3,7 +3,8 @@ package Perl::Critic::Policy::ProhibitPipeOpen;
 # ABSTRACT: Don't let a pipe open be the quiet way to shell out.
 
 use strict;
-use warnings;
+use warnings FATAL => 'all';
+no autovivification;
 
 use 5.014;
 
@@ -67,11 +68,11 @@ unnoticed: the policy reads source, not intent.
 
 # The mode argument of a three-or-more-arg open that makes it spawn something
 # rather than open a file.
-Readonly::Scalar my $PIPE_MODE_RX => qr/\A (?: -[|] | [|]- ) \z/xms;
+Readonly::Scalar my $PIPE_MODE_RX => qr/\A (?: -[|] | [|]- ) \z/xs;
 
 # The same thing said the old way, with the pipe buried in a two-arg string:
 # "cmd |" to read from it, "| cmd" to write to it.
-Readonly::Scalar my $TWO_ARG_PIPE_RX => qr/ (?: \A \s* [|] | [|] \s* \z ) /xms;
+Readonly::Scalar my $TWO_ARG_PIPE_RX => qr/ (?: \A \s* [|] | [|] \s* \z ) /xs;
 
 Readonly::Scalar my $DESC => q{Pipe "open" used};
 Readonly::Scalar my $EXPL => q{Shelling out needs signing off on -- use system/exec/qx with a '## no critic' saying why};
